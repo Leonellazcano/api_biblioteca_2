@@ -1,13 +1,12 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-mongoose.connect(process.env.MONGO_DB, {
-  useUnifiedTopology: true,
-  useNewUrlParser: true,
-});
+
+mongoose.connect(process.env.MONGO_DB, { useUnifiedTopology: true,  useNewUrlParser: true, });
 
 const LibroSchema = new mongoose.Schema({
-  titulo: String,
-  autor: String
+    titulo: String,
+    autor: String
 }, { collection: 'libros' });
 
 const Libro = mongoose.model('Libro', LibroSchema);
