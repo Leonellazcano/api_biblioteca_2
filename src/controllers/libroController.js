@@ -58,3 +58,15 @@ exports.deleteLibro = async (req, res) => {
     res.status(500).json({ error: "Error al eliminar el Libro" });
   }
 };
+
+exports.getLibroByTitulo = async (req, res) => {
+  try {
+    const libro = await Libro.findOne({ titulo: req.params.titulo });
+    if (!libro) {
+      return res.status(404).json({ error: "Libro no encontrado" });
+    }
+    res.status(200).json(libro);
+  } catch (error) {
+    res.status(500).json({ error: "Error al obtener el Libro" });
+  }
+};
