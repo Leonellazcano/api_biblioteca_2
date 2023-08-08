@@ -22,7 +22,7 @@ router.put("/:id", requiredScopes("write:libros"), updateLibro);
 // Ruta para eliminar un Libro
 router.delete("/:id", requiredScopes("write:libros"), deleteLibro);
 
-// Ruta para obtener un libro por título creada  con codeium
+// Ruta para obtener un libro por título creada  con codeium !!!!
 router.get("/titulo/:titulo", requiredScopes("read:libros"), getLibroByTitulo);
 
 

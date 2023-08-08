@@ -58,7 +58,7 @@ exports.deleteLibro = async (req, res) => {
     res.status(500).json({ error: "Error al eliminar el Libro" });
   }
 };
-
+/// codigo por codeium
 exports.getLibroByTitulo = async (req, res) => {
   try {
     const libro = await Libro.findOne({ titulo: req.params.titulo });
